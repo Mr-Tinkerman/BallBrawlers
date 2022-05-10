@@ -1,2 +1,3 @@
-# BallBrawlers
-A game where balls punch each other
+# BallRiders
+
+It's ball parkour... What did you expect?
