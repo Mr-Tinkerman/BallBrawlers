@@ -52,7 +52,7 @@ public partial class @BallRollInputActions : IInputActionCollection2, IDisposabl
                     ""id"": ""3651078f-bd1c-4d5b-a209-af1c6bccb1b4"",
                     ""path"": ""<Touchscreen>/primaryTouch/delta"",
                     ""interactions"": """",
-                    ""processors"": ""InvertVector2(invertY=false),ScaleVector2(x=0.2,y=0.1)"",
+                    ""processors"": ""InvertVector2(invertY=false),ScaleVector2(x=0.2,y=0.2)"",
                     ""groups"": """",
                     ""action"": ""Roll"",
                     ""isComposite"": false,
