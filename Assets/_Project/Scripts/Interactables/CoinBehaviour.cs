@@ -5,7 +5,7 @@ public class CoinBehaviour : MonoBehaviour
     public int coinValue = 1;
     public SaveManager sm;
 
-    void Awake()
+    void Awake() 
     {
         sm = GameObject.FindObjectOfType<SaveManager>();
     }
