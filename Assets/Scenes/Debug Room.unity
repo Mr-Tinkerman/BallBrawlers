@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -318,6 +319,22 @@ MonoBehaviour:
   minDistance: 2
   desiredDistance: 5
   relativeHeight: 2
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 144b498399baefd4db2f827815bef77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData:
+    coins: 0
+    skins: 
+    hats: 
 --- !u!1 &1062439240
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +595,8 @@ GameObject:
   - component: {fileID: 1497578462}
   - component: {fileID: 1497578461}
   - component: {fileID: 1497578460}
+  - component: {fileID: 1497578465}
+  - component: {fileID: 1497578464}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -661,3 +680,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &1497578464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497578459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3292250427c8a246805c024f0388a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coin:
+    coinType: 1
+  sm: {fileID: 0}
+--- !u!54 &1497578465
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497578459}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
