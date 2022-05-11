@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class BallMovement : MonoBehaviour
+public class BallBehaviour : MonoBehaviour
 {
     public float rollTorqueFactor = 1;
     public float maxVelocity = 30;

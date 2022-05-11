@@ -1,21 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(BallMovement))]
+[RequireComponent(typeof(BallBehaviour))]
 public class PlayerController : MonoBehaviour
 {
     private BallRollInputActions ballRollInputActions;
     private Vector2 inputMoveSynced;
     private Vector2 inputMove;
 
-    BallMovement ballMovement;
+    BallBehaviour ball;
     
     void Awake()
     {
         ballRollInputActions = new BallRollInputActions();
-        ballMovement = GetComponent<BallMovement>();
+        ball = GetComponent<BallBehaviour>();
     }
 
     void OnEnable()
@@ -40,7 +38,7 @@ public class PlayerController : MonoBehaviour
         inputMoveSynced = inputMove * inputMove * inputMove / 100;
         inputMove = Vector2.zero;
 
-        ballMovement.Roll(inputMoveSynced);
+        ball.Roll(inputMoveSynced);
 
         // Also input event protection
         inputMoveSynced = Vector2.zero;
