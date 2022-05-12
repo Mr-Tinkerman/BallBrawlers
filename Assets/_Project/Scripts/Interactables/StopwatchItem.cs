@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class StopwatchItem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private int seconds = 3;
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter()
     {
-        
+        TimeKeeper.Instance.AddTime(seconds);
+
+        DestroyImmediate(this.gameObject);
     }
 }
