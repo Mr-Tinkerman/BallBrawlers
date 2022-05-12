@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2833294436924444745
+--- !u!1 &3087851694693608716
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7006717764991447466}
-  - component: {fileID: 6024307415356119263}
-  - component: {fileID: 5793068505998990035}
-  - component: {fileID: 7865009368599838542}
+  - component: {fileID: 7833868795185712367}
+  - component: {fileID: 308367611023163085}
+  - component: {fileID: 2692754479032946879}
+  - component: {fileID: 3941760091680690918}
   m_Layer: 16
-  m_Name: Coin
+  m_Name: Stopwatch
   m_TagString: Interactables
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7006717764991447466
+--- !u!4 &7833868795185712367
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2833294436924444745}
+  m_GameObject: {fileID: 3087851694693608716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2223337582390699280}
+  - {fileID: 1391967730505635925}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &6024307415356119263
+--- !u!54 &308367611023163085
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2833294436924444745}
+  m_GameObject: {fileID: 3087851694693608716}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -50,33 +50,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &5793068505998990035
+--- !u!135 &2692754479032946879
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2833294436924444745}
+  m_GameObject: {fileID: 3087851694693608716}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7865009368599838542
+--- !u!114 &3941760091680690918
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2833294436924444745}
+  m_GameObject: {fileID: 3087851694693608716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3292250427c8a246805c024f0388a7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ad087da3776ce34a8de00d1129e4609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinValue: 1
---- !u!1 &4021832942186958827
+  seconds: 3
+--- !u!1 &4205175981254685358
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,45 +84,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2223337582390699280}
-  - component: {fileID: 7644450792263399936}
-  - component: {fileID: 2183407833095399399}
+  - component: {fileID: 1391967730505635925}
+  - component: {fileID: 7466169905237460805}
+  - component: {fileID: 1425010353720318626}
   m_Layer: 16
-  m_Name: CoinVisuals
+  m_Name: StopwatchVisuals
   m_TagString: Interactables
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2223337582390699280
+--- !u!4 &1391967730505635925
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4021832942186958827}
+  m_GameObject: {fileID: 4205175981254685358}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.05, z: 1}
+  m_LocalScale: {x: 1, y: 0.1, z: 1}
   m_Children: []
-  m_Father: {fileID: 7006717764991447466}
+  m_Father: {fileID: 7833868795185712367}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!33 &7644450792263399936
+--- !u!33 &7466169905237460805
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4021832942186958827}
+  m_GameObject: {fileID: 4205175981254685358}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2183407833095399399
+--- !u!23 &1425010353720318626
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4021832942186958827}
+  m_GameObject: {fileID: 4205175981254685358}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -135,7 +135,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e86679b5b5e453747b427b02b60f31f3, type: 2}
+  - {fileID: 2100000, guid: 48d0aa73e4a8c544eb780931d01c803a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
