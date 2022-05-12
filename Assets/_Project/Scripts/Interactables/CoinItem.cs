@@ -2,18 +2,13 @@ using UnityEngine;
 
 public class CoinItem : MonoBehaviour
 {
-    public int coinValue = 1;
-    private SaveManager sm;
-
-    void Awake() 
-    {
-        sm = GameObject.FindObjectOfType<SaveManager>();
-    }
+    [SerializeField]
+    private int coinValue = 1;
 
     void OnTriggerEnter()
     {
-        sm.AddCoins(coinValue);
-        sm.Save();
+        SaveManager.Instance.AddCoins(coinValue);
+        SaveManager.Instance.Save();
 
         Destroy(this.gameObject);
     }
