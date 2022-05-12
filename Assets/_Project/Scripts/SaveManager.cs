@@ -9,14 +9,17 @@ public class SaveManager : MonoBehaviour
     [SerializeField]
     Save gameData;
     
-    public static bool created = false;
+    public static SaveManager Instance;
 
     void Awake()
     {
-        if (created)
-            DestroyImmediate(this);
+        if (Instance != null)
+        {
+            Destroy(this);
+            return;
+        }
 
-        created = true;
+        Instance = this;
 
         Load();
     }
