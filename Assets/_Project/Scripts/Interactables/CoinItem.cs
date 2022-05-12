@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CoinBehaviour : MonoBehaviour
+public class CoinItem : MonoBehaviour
 {
     public int coinValue = 1;
     private SaveManager sm;
