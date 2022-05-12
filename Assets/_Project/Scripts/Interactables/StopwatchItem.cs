@@ -11,6 +11,6 @@ public class StopwatchItem : MonoBehaviour
     {
         TimeKeeper.Instance.AddTime(seconds);
 
-        DestroyImmediate(this.gameObject);
+        Destroy(this.gameObject);
     }
 }
