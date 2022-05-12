@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
+[RequireComponent(typeof(GameStateManager))]
 public class SaveManager : MonoBehaviour
 {
     [SerializeField]

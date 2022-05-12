@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(GameStateManager))]
 public class TimeKeeper : MonoBehaviour
 {
     private float startingTime = 30;
