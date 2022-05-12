@@ -14,7 +14,7 @@ public class StickyHazard : MonoBehaviour
 
         if (rb != null)
         {
-            col.attachedRigidbody.drag = stickyDrag;
+            rb.drag = stickyDrag;
         }
     }
 
@@ -25,7 +25,7 @@ public class StickyHazard : MonoBehaviour
 
         if (rb != null)
         {
-            col.attachedRigidbody.drag = 0;
+            rb.drag = 0;
         }
     }
 }
