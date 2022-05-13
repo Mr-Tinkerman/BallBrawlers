@@ -880,11 +880,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1704489717}
     m_Modifications:
+    - target: {fileID: 1391967730505635925, guid: a799dbf4a36b4f34e846baa109a27a7f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425010353720318626, guid: a799dbf4a36b4f34e846baa109a27a7f,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3087851694693608716, guid: a799dbf4a36b4f34e846baa109a27a7f,
         type: 3}
       propertyPath: m_Name
       value: Stopwatch
       objectReference: {fileID: 0}
+    - target: {fileID: 7466169905237460805, guid: a799dbf4a36b4f34e846baa109a27a7f,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2012119048191272473, guid: 1f56551023e86e84fba4f2215d323221,
+        type: 3}
     - target: {fileID: 7833868795185712367, guid: a799dbf4a36b4f34e846baa109a27a7f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1156,6 +1172,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1704489717}
     m_Modifications:
+    - target: {fileID: 2183407833095399399, guid: fa611c13a7ebc1645a76b964bcff0a9c,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223337582390699280, guid: fa611c13a7ebc1645a76b964bcff0a9c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2833294436924444745, guid: fa611c13a7ebc1645a76b964bcff0a9c,
         type: 3}
       propertyPath: m_Name
@@ -1216,6 +1242,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7644450792263399936, guid: fa611c13a7ebc1645a76b964bcff0a9c,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5216581434543980006, guid: 1f56551023e86e84fba4f2215d323221,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa611c13a7ebc1645a76b964bcff0a9c, type: 3}
 --- !u!1001 &5722051826678584693
