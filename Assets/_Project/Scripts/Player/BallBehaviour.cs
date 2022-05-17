@@ -6,18 +6,78 @@ public class BallBehaviour : MonoBehaviour
     public float rollTorqueFactor = 1;
     public float maxVelocity = 30;
 
+    private Vector3 relativeUp = Vector3.up;
+
+    private ContactPoint[] contactPoints = new ContactPoint[0];
+
     private Rigidbody rb;
-    private Transform mainCamera;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        mainCamera = Camera.main.transform;
+        rb.maxAngularVelocity = maxVelocity;
     }
 
-    public void Roll(Vector2 rollVector)
+    void OnDrawGizmosSelected() 
     {
-        rb.maxAngularVelocity = maxVelocity;
-        rb.AddTorque(rollTorqueFactor * (mainCamera.right * rollVector.y + Vector3.ProjectOnPlane(mainCamera.forward, Vector3.up) * rollVector.x));
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position, transform.position - relativeUp * 2);
+    }
+
+    void FixedUpdate()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, -relativeUp, out hit, 2f))
+        {
+            relativeUp = hit.normal;
+        }
+        else
+        {
+            relativeUp = Vector3.up;
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag != "Environment")
+            return;
+
+        if (collision.contactCount > contactPoints.Length)
+            contactPoints = new ContactPoint[collision.contactCount];
+
+        collision.GetContacts(contactPoints);
+
+        Vector3 avgDir = Vector3.zero;
+
+        for (int i = 0; i < collision.contactCount; ++i)
+        {
+            avgDir += contactPoints[i].normal.normalized;
+        }
+
+        avgDir = Vector3.Normalize(avgDir / collision.contactCount);
+        relativeUp = avgDir;
+    }
+
+    #if UNITY_EDITOR
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+
+            rb.position = Vector3.up;
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            Roll(Vector3.forward * 100);
+        }
+    }
+    #endif
+
+    public void Roll(Vector3 rollVector)
+    {
+        Vector3 rollAxis = Vector3.Cross(relativeUp, rollVector) * rollVector.magnitude;
+        rb.AddTorque(rollAxis * rollTorqueFactor);
     }
 }
