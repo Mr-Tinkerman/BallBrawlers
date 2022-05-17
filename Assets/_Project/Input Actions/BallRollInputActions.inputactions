@@ -13,15 +13,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Punch",
-                    "type": "Value",
-                    "id": "9780da1f-0a89-4419-aa6f-83fc49bf0158",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -30,20 +21,9 @@
                     "id": "3651078f-bd1c-4d5b-a209-af1c6bccb1b4",
                     "path": "<Touchscreen>/primaryTouch/delta",
                     "interactions": "",
-                    "processors": "InvertVector2(invertY=false),ScaleVector2(x=0.2,y=0.2)",
+                    "processors": "ScaleVector2(x=1.2)",
                     "groups": "",
                     "action": "Roll",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d83894c6-10f2-4378-aabf-41f41833c3c9",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "Press(behavior=2)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Punch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
