@@ -9,6 +9,11 @@ public class GameStateManager : MonoBehaviour
 
     void Awake()
     {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    void OnEnable()
+    {
         if (Instance != null)
         {
             Destroy(this.gameObject);
@@ -16,7 +21,6 @@ public class GameStateManager : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(this.gameObject);
     }
 
     public enum GameState
