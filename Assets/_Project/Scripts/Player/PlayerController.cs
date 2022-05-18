@@ -31,23 +31,22 @@ public class PlayerController : MonoBehaviour
     void OnDisable()
     {
         ballRollInputActions.Ball.Roll.Disable();
+        ballRollInputActions.Ball.Roll.performed -= OnSwipe;
     }
 
-    void OnSwipe(InputAction.CallbackContext ctx)
+    void OnSwipe(InputAction.CallbackContext swipeDelta)
     {
-        inputMove += ctx.ReadValue<Vector2>();
+        inputMove += swipeDelta.ReadValue<Vector2>();
     }
 
     Vector3 rollDir;
 
     void FixedUpdate()
     {
-        // Prevents input events from changing mid-update call
-        lengthCurve = inputMove.magnitude / 25;// * inputMove.magnitude * inputMove.magnitude / 100;
-        inputMoveSynced = inputMove.normalized * lengthCurve;
-        inputMove = Vector2.zero;
-
-        Debug.Log(inputMove);
+        // Syncing input here prevents input events from changing mid-update call
+        // I am also scaling input for a better transition from screen to motion
+        inputMoveSynced = inputMove / 25;  // 25 feels the best after testing
+        inputMove = Vector2.zero; 
 
         rollDir = cameraTransform.rotation * new Vector3(inputMoveSynced.x, inputMoveSynced.y, 0);
 
