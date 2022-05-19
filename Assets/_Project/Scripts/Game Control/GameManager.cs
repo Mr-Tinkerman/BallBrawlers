@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public GameState gameState;
+    public StateMachine stateMachine;
 
     void Awake()
     {
@@ -32,15 +32,4 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
     #endif
-
-    public enum GameState
-    {
-        MainMenu,
-        Shop,
-        Equip,
-        Settings,
-        Playing,
-        Paused,
-        GameOver
-    }
 }
