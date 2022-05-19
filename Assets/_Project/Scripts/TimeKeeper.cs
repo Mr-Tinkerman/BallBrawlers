@@ -1,7 +1,7 @@
 using System.Security;
 using UnityEngine;
 
-[RequireComponent(typeof(GameStateManager))]
+[RequireComponent(typeof(GameManager))]
 public class TimeKeeper : MonoBehaviour
 {
     private float startingTime = 30;
@@ -34,7 +34,7 @@ public class TimeKeeper : MonoBehaviour
         }
         else
         {
-            GameStateManager.Instance.GameOver();
+            // Game Over
         }
     }
 

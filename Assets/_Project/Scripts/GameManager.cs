@@ -2,16 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameStateManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static GameStateManager Instance;
+    public static GameManager Instance;
     public GameState gameState;
 
     void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        #if !UNITY_EDITOR
+        if (Instance != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+
+        Instance = this;
+        #endif
     }
 
+    #if UNITY_EDITOR
     void OnEnable()
     {
         if (Instance != null)
@@ -22,6 +31,7 @@ public class GameStateManager : MonoBehaviour
 
         Instance = this;
     }
+    #endif
 
     public enum GameState
     {
@@ -32,11 +42,5 @@ public class GameStateManager : MonoBehaviour
         Playing,
         Paused,
         GameOver
-    }
-
-    public void GameOver()
-    {
-        gameState = GameState.GameOver;
-        Debug.Log("User has died.  If app still running, switch state.");
     }
 }
