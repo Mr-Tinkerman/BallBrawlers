@@ -9,7 +9,7 @@ public class StopwatchItem : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        TimeKeeper.Instance.AddTime(seconds);
+        GameManager.GetGameState<GamePlayingState>().gameTimer.AddTime(seconds);
 
         Destroy(this.gameObject);
     }
