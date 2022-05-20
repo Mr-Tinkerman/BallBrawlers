@@ -16,8 +16,6 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         #endif
-
-        SwitchState<MenuState>();
     }
 
     #if UNITY_EDITOR
