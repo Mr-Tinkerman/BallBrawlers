@@ -1,6 +1,4 @@
-public class PlayingState : IState
+public class PlayingState : GameStateBase
 {
-    public void Execute() { }
-    public void Enter() { }
-    public void Exit() { }
+    
 }
