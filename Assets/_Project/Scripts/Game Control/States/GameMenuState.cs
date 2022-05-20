@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MenuState : GameStateBase
+public class GameMenuState : GameStateBase
 {
     
 }

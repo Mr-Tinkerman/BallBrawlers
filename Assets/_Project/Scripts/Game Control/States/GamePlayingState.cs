@@ -1,4 +1,4 @@
-public class PlayingState : GameStateBase
+public class GamePlayingState : GameStateBase
 {
     
 }
