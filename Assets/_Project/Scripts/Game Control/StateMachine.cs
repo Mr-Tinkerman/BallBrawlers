@@ -1,15 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using UnityEngine;
 
-public class StateMachine : MonoBehaviour
+public class StateMachine
 {
     IState currentState;
 
+    public StateMachine()
+    {
+        currentState = new NullState();
+    }
+
     public void SwitchState(IState state)
     {
-        if (currentState != null)
-            currentState.Exit();
+        currentState.Exit();
 
         currentState = state;
         currentState.Enter();
@@ -17,8 +24,7 @@ public class StateMachine : MonoBehaviour
 
     public void Execute()
     {
-        if (currentState != null)
-            currentState.Execute();
+        currentState.Execute();
     }
 }
 

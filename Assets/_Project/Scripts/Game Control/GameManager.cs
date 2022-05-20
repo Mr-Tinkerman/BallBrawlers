@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public StateMachine stateMachine;
+    public StateMachine stateMachine = new StateMachine();
 
     void Awake()
     {
@@ -18,6 +16,8 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         #endif
+
+        SwitchState<MenuState>();
     }
 
     #if UNITY_EDITOR
@@ -32,4 +32,26 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
     #endif
+
+    void Update()
+    {
+        stateMachine.Execute();
+    }
+
+    public void SwitchState<T>() where T : IState, new()
+    {
+        T temp = new T();
+
+        stateMachine.SwitchState(GetGameState<T>());
+    }
+
+    public static T GetGameState<T>() where T : IState, new()
+    {
+        return GameStates<T>.state;
+    }
+
+    private static class GameStates<T> where T : IState, new()
+    {
+        public static readonly T state = new T();
+    }
 }
