@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public StateMachine stateMachine = new StateMachine();
+
+    public System.Type currentState;
 
     void Awake()
     {
@@ -16,6 +19,11 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         #endif
+    }
+
+    void Start()
+    {
+        Instance.SwitchState<GameMenuState>();
     }
 
     #if UNITY_EDITOR
@@ -36,19 +44,18 @@ public class GameManager : MonoBehaviour
         stateMachine.Execute();
     }
 
-    public void SwitchState<T>() where T : IState, new()
+    public void SwitchState<T>() where T : GameStateBase, new()
     {
-        T temp = new T();
-
+        currentState = typeof(T);
         stateMachine.SwitchState(GetGameState<T>());
     }
 
-    public static T GetGameState<T>() where T : IState, new()
+    public static T GetGameState<T>() where T : GameStateBase, new()
     {
         return GameStates<T>.state;
     }
 
-    private static class GameStates<T> where T : IState, new()
+    private static class GameStates<T> where T : GameStateBase, new()
     {
         public static readonly T state = new T();
     }
