@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,6 +6,8 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField]
     private List<Canvas> UILayers;
+    
+    public static event Action OnClearUI = delegate { };
     
     public StateMachine stateMachine = new StateMachine();
 
@@ -19,6 +22,13 @@ public class UIManager : MonoBehaviour
         }
 
         Instance = this;
+
+        SwitchState<UIMainMenuState>();
+    }
+
+    public static void ClearUI()
+    {
+        OnClearUI?.Invoke();
     }
 
     public void SwitchState<T>() where T : UIStateBase, new()
