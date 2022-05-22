@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,16 +11,25 @@ public class GamePlayingState : GameStateBase
         if (!SceneManager.GetSceneByName("Debug Room").isLoaded)
             SceneManager.LoadScene("Debug Room", LoadSceneMode.Additive);
 
-        gameTimer.OnTimeDepleted += OnGameTimerEnd;
-        gameTimer.Start();
+        Time.timeScale = 1;
+
+        gameTimer.OnTimeDepleted += HandleTimeDepleted;
+        gameTimer.Resume();
     }
 
     public override void Exit()
     {
-        gameTimer.OnTimeDepleted -= OnGameTimerEnd;
+        Time.timeScale = 1;
+        gameTimer.Pause();
+        gameTimer.OnTimeDepleted -= HandleTimeDepleted;
     }
 
-    private void OnGameTimerEnd()
+    public void ResetTimer()
+    {
+        gameTimer.Reset();
+    }
+
+    private void HandleTimeDepleted()
     {
         GameManager.Instance.SwitchState<GameOverState>();
     }
