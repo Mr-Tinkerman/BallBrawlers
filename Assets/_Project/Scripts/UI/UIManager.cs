@@ -23,6 +23,10 @@ public class UIManager : MonoBehaviour
 
         Instance = this;
 
+    }
+
+    void Start()
+    {
         SwitchState<UIMainMenuState>();
     }
 
