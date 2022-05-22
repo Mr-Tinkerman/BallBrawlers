@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Project/Scenes/Super Layer.unity
+    guid: b95707e6aa061964e87608242fde6f44
+  - enabled: 1
+    path: Assets/_Project/Scenes/UI Layer.unity
+    guid: 0f5ee9f7a79b2b349b147b3ee53c60d5
+  - enabled: 1
     path: Assets/_Project/Scenes/Debug Room.unity
     guid: 87d5ce786e5f3e548a27f5c33cfb5567
   m_configObjects: {}
