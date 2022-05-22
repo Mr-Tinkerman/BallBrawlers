@@ -11,6 +11,6 @@ public class GameMenuState : GameStateBase
 
     public override void Exit()
     {
-        UIManager.Instance.stateMachine.SwitchState(null);
+        UIManager.ClearUI();
     }
 }
