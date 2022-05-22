@@ -1,16 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class UIMainMenuState : UIStateBase
 {
     public void HandlePlayButtonClick()
     {
+        GameManager.GetGameState<GamePlayingState>().ResetTimer();
         GameManager.Instance.SwitchState<GamePlayingState>();
     }
 
-    public void HandleStoreButtonClick()
+    public void HandleSkinsButtonClick()
     {
         UIManager.Instance.SwitchState<UIStoreMenuState>();
     }
