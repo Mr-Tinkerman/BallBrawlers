@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GamePlayingState : GameStateBase
 {
@@ -6,6 +7,9 @@ public class GamePlayingState : GameStateBase
 
     public override void Enter()
     {
+        if (!SceneManager.GetSceneByName("Debug Room").isLoaded)
+            SceneManager.LoadScene("Debug Room", LoadSceneMode.Additive);
+
         gameTimer.OnTimeDepleted += OnGameTimerEnd;
         gameTimer.Start();
     }
