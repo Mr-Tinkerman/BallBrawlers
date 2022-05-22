@@ -5,7 +5,7 @@ Shader "TinkerGame/Test1"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _Color ("Color", Color) = (1, 1, 1, 1)
+        [HDR] _Color ("Color", Color) = (1, 1, 1, 1)
         _Glossiness ("Smoothness", Range (0, 1)) = 0.5
         [Gamma] _Metallic ("Metallic", Range (0, 1)) = 0
     }
