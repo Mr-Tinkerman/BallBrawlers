@@ -1,14 +1,12 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
 [CreateAssetMenu(fileName = "Platform Spawn Config", menuName = "Config/Platform Spawn Config")]
-public class PlatformSpawnConfig : ScriptableObject
+public class PlatformSpawnerConfig : SpawnerConfig
 {
     [SerializeField]
-    public PlatformGroup[] platformGroups;
+    public PlatformGroup[] difficulties;
 
     public Material platformMaterial;
 }

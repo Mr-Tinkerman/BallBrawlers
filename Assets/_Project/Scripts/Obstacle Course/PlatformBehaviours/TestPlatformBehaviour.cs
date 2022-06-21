@@ -4,7 +4,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Test", menuName = "Behaviour/Platform/Test")]
 public class TestPlatformBehaviour : PlatformBehaviour
 {
-    public override void OnExecute() { Debug.Log("Execute!"); }
-    public override void OnEnter() { Debug.Log("Enter!"); }
-    public override void OnExit() { Debug.Log("Exit!"); }
+    public override void OnExecute(float deltaTime)
+    { Debug.Log("Execute!  Delta Time: " + deltaTime); }
+
+    public override void OnEnter(Spawner spawner)
+    { Debug.Log("Enter!  Spawner: " + spawner.name); }
+
+    public override void OnExit()
+    { Debug.Log("Exit!"); }
 }

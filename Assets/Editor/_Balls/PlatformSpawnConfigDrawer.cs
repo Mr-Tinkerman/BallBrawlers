@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditorInternal;
 
-[CustomEditor(typeof(PlatformSpawnConfig))]
+[CustomEditor(typeof(PlatformSpawnerConfig))]
 public class PlatformSpawnConfigInspector : Editor
 {
     private ReorderableList m_groupList;
@@ -44,7 +44,7 @@ public class PlatformSpawnConfigInspector : Editor
     private void Setup()
     {
         m_platformMat = serializedObject.FindProperty("platformMaterial");
-        m_platformGroupList = serializedObject.FindProperty("platformGroups");
+        m_platformGroupList = serializedObject.FindProperty("difficulties");
 
         m_groupList = new ReorderableList(serializedObject, m_platformGroupList, true, true, true, true);
 
