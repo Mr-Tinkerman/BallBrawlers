@@ -5,15 +5,15 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     [SerializeField]
-    private List<Canvas> UILayers;
-    
+    private List<Canvas> _UILayers;
+
     public static event Action OnClearUI = delegate { };
-    
+
     public StateMachine stateMachine = new StateMachine();
 
     public static UIManager Instance { get; private set; }
 
-    void Awake ()
+    void Awake()
     {
         if (Instance != null)
         {
@@ -22,7 +22,6 @@ public class UIManager : MonoBehaviour
         }
 
         Instance = this;
-
     }
 
     void Start()
@@ -42,7 +41,7 @@ public class UIManager : MonoBehaviour
         if (state == null)
             Debug.LogWarningFormat
             (
-                "A UI state of {0} could not be found!  Defaulting to NullState", 
+                "A UI state of {0} could not be found!  Defaulting to NullState",
                 typeof(T)
             );
 

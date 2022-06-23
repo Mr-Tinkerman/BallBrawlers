@@ -1,6 +1,8 @@
-using UnityEngine;
-
 public class GameOverState : GameStateBase
 {
-    // Open up menu and prepare for a potential restart
+    public override void Enter()
+    {
+        // Show menu to retry, quit, or buy an outfit
+
+    }
 }
