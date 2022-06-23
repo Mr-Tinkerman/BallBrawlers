@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,12 +18,12 @@ public class GamePlayingState : GameStateBase
 
     public override void Exit()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 0;
         gameTimer.Pause();
         gameTimer.OnTimeDepleted -= HandleTimeDepleted;
     }
 
-    public void ResetTimer()
+    public void ResetGame()
     {
         gameTimer.Reset();
     }
