@@ -9,10 +9,12 @@ public class Timer
     public event Action OnTimeDepleted = delegate { };
 
     private bool m_started = false;
+    private bool m_loop = false;
 
-    public Timer(float seconds)
+    public Timer(float seconds, bool loop = false)
     {
         startingTime = seconds;
+        m_loop = loop;
 
         Reset();
     }
@@ -32,7 +34,14 @@ public class Timer
         else
         {
             OnTimeDepleted?.Invoke();
-            Stop();
+            if (m_loop)
+            {
+                Reset();
+            }
+            else
+            {
+                Stop();
+            }
         }
     }
 
@@ -49,14 +58,14 @@ public class Timer
 
     public void Start()
     {
-        Resume();
         Reset();
+        Resume();
     }
 
     public void Stop()
     {
-        Pause();
         Reset();
+        Pause();
     }
 
     public void Resume()
