@@ -8,8 +8,8 @@ using System.Xml.Serialization;
 public class SaveManager : MonoBehaviour
 {
     [SerializeField]
-    Save gameData;
-    
+    private Save _gameData;
+
     public static SaveManager Instance;
 
     void Awake()
@@ -27,51 +27,51 @@ public class SaveManager : MonoBehaviour
 
     public void Save()
     {
-        SaveHandler.Serialize(gameData, "savedata");
+        SaveHandler.Serialize(_gameData, "savedata");
     }
 
     public void Load()
     {
-        gameData = SaveHandler.Deserialize<Save>("savedata");
+        _gameData = SaveHandler.Deserialize<Save>("savedata");
     }
 
     public void AddCoins(int i)
     {
-        gameData.AddCoins(i);
+        _gameData.AddCoins(i);
     }
 }
 
 public class SaveHandler
 {
-	public static void Serialize(object item, string name)
-	{
-		XmlSerializer serializer = new XmlSerializer(item.GetType());
-		StreamWriter writer = new StreamWriter(Application.persistentDataPath + 
-                                                                          "/" + 
-                                                                         name + 
+    public static void Serialize(object item, string name)
+    {
+        XmlSerializer serializer = new XmlSerializer(item.GetType());
+        StreamWriter writer = new StreamWriter(Application.persistentDataPath +
+                                                                          "/" +
+                                                                         name +
                                                                          ".txt");
-		serializer.Serialize(writer.BaseStream, item);
-		writer.Close();
-	}
- 
-	public static T Deserialize<T>(string name)
-	{
-		XmlSerializer serializer = new XmlSerializer(typeof(T));
-		StreamReader reader = new StreamReader(Application.persistentDataPath + 
-                                                                          "/" + 
-                                                                         name + 
+        serializer.Serialize(writer.BaseStream, item);
+        writer.Close();
+    }
+
+    public static T Deserialize<T>(string name)
+    {
+        XmlSerializer serializer = new XmlSerializer(typeof(T));
+        StreamReader reader = new StreamReader(Application.persistentDataPath +
+                                                                          "/" +
+                                                                         name +
                                                                          ".txt");
-		T deserialized = (T)serializer.Deserialize(reader.BaseStream);
-		reader.Close();
-		return deserialized;
-	}
+        T deserialized = (T)serializer.Deserialize(reader.BaseStream);
+        reader.Close();
+        return deserialized;
+    }
 }
 
 [System.Serializable, XmlRoot("game_data")]
 public class Save
 {
     public int coins;
-    
+
     // [XmlArray("level_groups"), XmlArrayItem("levels")]
     // System.Int16[] unlockedLevels;
 
