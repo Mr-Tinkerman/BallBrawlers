@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 public class BallBehaviour : MonoBehaviour
@@ -18,7 +19,7 @@ public class BallBehaviour : MonoBehaviour
         rb.maxAngularVelocity = maxVelocity;
     }
 
-    void OnDrawGizmosSelected() 
+    void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawLine(transform.position, transform.position - relativeUp * 2);
@@ -58,22 +59,19 @@ public class BallBehaviour : MonoBehaviour
         relativeUp = avgDir;
     }
 
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-
-            rb.position = Vector3.up;
+            SceneManager.LoadScene(0, LoadSceneMode.Single);
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
             Roll(Vector3.forward * 100);
         }
     }
-    #endif
+#endif
 
     public void Roll(Vector3 rollVector)
     {
