@@ -28,7 +28,8 @@ public class PlatformSpawnerController : MonoBehaviour
     private void Spawn()
     {
         // TODO: randomize spawned platform
-        PlatformSpawnableData spawnableData = new PlatformSpawnableData(Vector3.zero, 1, 0);
+        int diff = TinkerLib.Random.WeightedRandom(_platformSpawnConfig.difficulties.Length - 2, (_platformSpawnConfig.difficulties.Length - 2) / 2, 3) + 1;
+        PlatformSpawnableData spawnableData = new PlatformSpawnableData(Vector3.zero, diff, Random.Range(0, _platformSpawnConfig.difficulties[diff].platforms.Length));
 
         spawner?.Spawn(spawnableData);
     }
