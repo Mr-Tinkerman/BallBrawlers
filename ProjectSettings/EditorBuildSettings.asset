@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Super Layer.unity
     guid: b95707e6aa061964e87608242fde6f44
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Project/Scenes/UI Layer.unity
     guid: 0f5ee9f7a79b2b349b147b3ee53c60d5
   - enabled: 1
