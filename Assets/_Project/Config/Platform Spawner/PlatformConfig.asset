@@ -28,4 +28,8 @@ MonoBehaviour:
     - mesh: {fileID: 7478954923306711100, guid: 81797e54d2e086b4999b7fae4723fda9,
         type: 3}
       behaviour: {fileID: 11400000, guid: 87348e238a011ca4fa697c18557df0fd, type: 2}
+  - platforms:
+    - mesh: {fileID: 5619582355342803071, guid: 81797e54d2e086b4999b7fae4723fda9,
+        type: 3}
+      behaviour: {fileID: 0}
   platformMaterial: {fileID: 2100000, guid: 0b2d099642983fc4c82649fe4367d9f7, type: 2}
