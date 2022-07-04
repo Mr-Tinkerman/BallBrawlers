@@ -2,24 +2,12 @@
     "m_SelectedDeviceId": "5e404936",
     "m_SelectedPackage": {
         "deviceId": "5e404936",
-        "name": "com.TinkermanGames.BallBrawlers",
-        "processId": 19778,
+        "name": "com.TinkermanGames.BallRollingIllthinkofatitlelater",
+        "processId": 28854,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "5e404936",
-            "name": "com.sec.android.app.launcher",
-            "processId": 4625,
-            "exited": false
-        },
-        {
-            "deviceId": "5e404936",
-            "name": "com.TinkermanGames.BallBrawlers",
-            "processId": 13909,
-            "exited": true
-        },
         {
             "deviceId": "5e404936",
             "name": "com.TinkermanGames.BallBrawlers",
@@ -48,6 +36,42 @@
             "deviceId": "5e404936",
             "name": "com.TinkermanGames.BallBrawlers",
             "processId": 19778,
+            "exited": true
+        },
+        {
+            "deviceId": "5e404936",
+            "name": "com.sec.android.app.launcher",
+            "processId": 4522,
+            "exited": false
+        },
+        {
+            "deviceId": "5e404936",
+            "name": "com.TinkermanGames.BallRollingIllthinkofatitlelater",
+            "processId": 10030,
+            "exited": false
+        },
+        {
+            "deviceId": "5e404936",
+            "name": "com.TinkermanGames.BallRollingIllthinkofatitlelater",
+            "processId": 12535,
+            "exited": false
+        },
+        {
+            "deviceId": "5e404936",
+            "name": "com.TinkermanGames.BallRollingIllthinkofatitlelater",
+            "processId": 13795,
+            "exited": false
+        },
+        {
+            "deviceId": "5e404936",
+            "name": "com.TinkermanGames.BallRollingIllthinkofatitlelater",
+            "processId": 22771,
+            "exited": false
+        },
+        {
+            "deviceId": "5e404936",
+            "name": "com.TinkermanGames.BallRollingIllthinkofatitlelater",
+            "processId": 28854,
             "exited": false
         }
     ],
