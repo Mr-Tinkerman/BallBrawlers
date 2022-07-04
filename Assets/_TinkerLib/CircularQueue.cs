@@ -1,4 +1,4 @@
-namespace TinkerUtil.DataStructures
+namespace TinkerLib.DataStructures
 {
     public class CircularQueue<T> : GenericCircularBuffer<T>
     {

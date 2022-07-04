@@ -1,6 +1,6 @@
 using System;
 
-namespace TinkerUtil.DataStructures
+namespace TinkerLib.DataStructures
 {
     public class ObjectCache<T> : GenericCircularBuffer<T>
     {

@@ -1,6 +1,6 @@
 {
     "name": "TinkerUtil",
-    "rootNamespace": "TinkerUtil",
+    "rootNamespace": "TinkerLib",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
