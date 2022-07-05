@@ -65,6 +65,11 @@ public class BallBehaviour : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SceneManager.LoadScene(0, LoadSceneMode.Single);
+#if UNITY_EDITOR
+
+            SceneManager.LoadScene(1, LoadSceneMode.Additive);
+
+#endif
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
