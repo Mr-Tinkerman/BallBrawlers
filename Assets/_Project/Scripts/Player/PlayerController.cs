@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     BallBehaviour ball;
 
     private Transform cameraTransform;
-    
+
     void Awake()
     {
         ballRollInputActions = new BallRollInputActions();
@@ -46,7 +46,20 @@ public class PlayerController : MonoBehaviour
         // Syncing input here prevents input events from changing mid-update call
         // I am also scaling input for a better transition from screen to motion
         inputMoveSynced = inputMove / 25;  // 25 feels the best after testing
-        inputMove = Vector2.zero; 
+        inputMove = Vector2.zero;
+
+#if UNITY_EDITOR
+
+        if (Input.GetKey(KeyCode.W))
+            inputMoveSynced.y = 2;
+        if (Input.GetKey(KeyCode.S))
+            inputMoveSynced.y = -2;
+        if (Input.GetKey(KeyCode.A))
+            inputMoveSynced.x = -1;
+        if (Input.GetKey(KeyCode.D))
+            inputMoveSynced.x = 1;
+
+#endif
 
         rollDir = cameraTransform.rotation * new Vector3(inputMoveSynced.x, inputMoveSynced.y, 0);
 
@@ -56,7 +69,7 @@ public class PlayerController : MonoBehaviour
         inputMoveSynced = Vector2.zero;
     }
 
-    void OnDrawGizmosSelected() 
+    void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, transform.position + Vector3.Cross(rollDir, Vector3.up) * 2);
