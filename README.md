@@ -1,3 +1,3 @@
-# BallRiders
+# Ball Rollers
 
-It's ball parkour... What did you expect?
+Let's get this ball rolling!
