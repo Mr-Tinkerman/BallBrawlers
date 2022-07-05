@@ -12,6 +12,8 @@ public class PlatformSpawnerController : MonoBehaviour
     {
         _spawner = GetComponent<Spawner>();
         _platformSpawnConfig = _spawner.GetSpawnerConfig() as PlatformSpawnerConfig;
+
+        Spawn(Vector2Int.zero);
     }
 
 #if UNITY_EDITOR
@@ -19,17 +21,19 @@ public class PlatformSpawnerController : MonoBehaviour
     {
         // Test if spawning works
         if (Input.GetKeyDown(KeyCode.RightBracket))
-            Spawn();
+        {
+            int diff = TinkerLib.Random.WeightedRandom(_platformSpawnConfig.difficulties.Length - 2, (_platformSpawnConfig.difficulties.Length - 2) / 2, 3) + 1;
+            Spawn(GetPlatform(0));
+        }
         if (Input.GetKeyDown(KeyCode.LeftBracket))
             Despawn();
     }
 #endif
 
-    private void Spawn()
+    private void Spawn(Vector2Int selected)
     {
         // TODO: randomize spawned platform
-        int diff = TinkerLib.Random.WeightedRandom(_platformSpawnConfig.difficulties.Length - 2, (_platformSpawnConfig.difficulties.Length - 2) / 2, 3) + 1;
-        PlatformSpawnableData spawnableData = new PlatformSpawnableData(Vector3.zero, diff, Random.Range(0, _platformSpawnConfig.difficulties[diff].platforms.Length));
+        PlatformSpawnableData spawnableData = new PlatformSpawnableData(Vector3.zero, selected.x, selected.y);
 
         spawner?.Spawn(spawnableData);
     }
@@ -37,5 +41,12 @@ public class PlatformSpawnerController : MonoBehaviour
     private void Despawn()
     {
         spawner?.Despawn();
+    }
+
+    private Vector2Int GetPlatform(int progress)
+    {
+        int difficulty = TinkerLib.Random.WeightedRandom(_platformSpawnConfig.difficulties.Length - 2, (_platformSpawnConfig.difficulties.Length - 2) / 2, 3) + 1;
+        int platformIndex = Random.Range(0, _platformSpawnConfig.difficulties[difficulty].platforms.Length);
+        return new Vector2Int(difficulty, platformIndex);
     }
 }
