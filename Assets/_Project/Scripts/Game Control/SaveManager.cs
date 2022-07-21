@@ -32,7 +32,16 @@ public class SaveManager : MonoBehaviour
 
     public void Load()
     {
-        _gameData = SaveHandler.Deserialize<Save>("savedata");
+        Debug.Log(Application.persistentDataPath);
+        try
+        {
+            _gameData = SaveHandler.Deserialize<Save>("savedata");
+        }
+        catch(System.Exception)
+        {
+            Save();
+            Load();
+        }
     }
 
     public void AddCoins(int i)
